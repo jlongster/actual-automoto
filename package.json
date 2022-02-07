@@ -1,0 +1,14 @@
+{
+  "name": "actual-automoto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": ". ./.roamenv && node src/index.js",
+    "deploy": "flyctl deploy"
+  },
+  "dependencies": {
+    "automoto": "^1.0.1",
+    "express": "^4.17.2"
+  }
+}

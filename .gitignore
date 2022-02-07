@@ -1,0 +1,10 @@
+supervise
+*.swp
+tokens
+config.json*
+node_modules
+.roamenv
+log
+data
+*~
+*#*#

@@ -1,0 +1,3 @@
+#!/bin/sh
+. ./.roamenv
+exec chpst -u jlongster node src/index.js
