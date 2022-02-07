@@ -43,12 +43,12 @@ const flows = {
   }),
   'Feeds to discord (release)': require('./flows/atom-publish')({
     discord: config.discordActual,
-    channel: '938087368399925318',
+    channel: '940289937754951730',
     url: 'https://actualbudget.com/blog/feed.xml?filter=release'
   }),
   'Feeds to discord (all)': require('./flows/atom-publish')({
     discord: config.discordActual,
-    channel: '937901803608096831',
+    channel: '940290142579605514',
     url: 'https://actualbudget.com/blog/feed.xml'
   }),
   'Reddit Actual posts to discord': require('./flows/reddit-posts-post')({
