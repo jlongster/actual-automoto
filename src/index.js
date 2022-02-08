@@ -1,13 +1,16 @@
 const express = require('express');
-const { getApp } = require('automoto');
+const { getApp, initDiscordCommands } = require('automoto');
 const getDiscordClient = require('automoto/clients/discord');
 const writeDiscordMessage = require('automoto/actions/write-discord-message');
 const config = require('../config.json');
 
-async function setupHandlers() {
+async function msg(text) {
   let discord = await getDiscordClient(config.discordActual);
   let channel = await discord.channels.fetch('940104435982565406');
+  writeDiscordMessage(channel, text);
+}
 
+async function setupHandlers() {
   process.on('SIGTERM', () => {
     setTimeout(() => {
       console.log('[SIGTERM] Shutdown');
@@ -21,7 +24,7 @@ async function setupHandlers() {
 
   process.on('unhandledRejection', async err => {
     console.log('UNHANDLED REJECTION:', err);
-    writeDiscordMessage(channel, 'ERROR: ' + err.message);
+    msg('ERROR: ' + err.message);
 
     // To avoid fatal errors that might stall out all the workflows, we kill the process
     // setTimeout(() => {
@@ -76,6 +79,9 @@ async function run() {
   let app = getApp(flows);
   app.use(express.static(__dirname + '/../static'));
 
+  initDiscordCommands(config.discordActual, __dirname + '/commands');
+
+  msg('Hello!');
   console.log('Listening on ' + config.server.port + '...');
   app.listen(config.server.port);
 }
