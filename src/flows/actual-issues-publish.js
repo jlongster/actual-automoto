@@ -1,9 +1,8 @@
 const getRoamClient = require('automoto/clients/roam');
 const getDiscordClient = require('automoto/clients/discord');
 const githubWebhook = require('automoto/sources/github-webhook');
-const writeDiscordEmbed = require('automoto/actions/write-discord-embed');
+const githubIssueToDiscord = require('automoto/actions/github-issue-to-discord');
 const GithubIssue = require('automoto/entities/github-issue');
-const GithubComment = require('automoto/entities/github-comment');
 
 let issuePageId = '8cE1fsMHq';
 
@@ -28,7 +27,7 @@ module.exports = config => async app => {
 
   for await (let data of await githubWebhook(app, config.github)) {
     if (data.issue) {
-      let issue = new GithubIssue(data.issue)
+      let issue = new GithubIssue(data.issue);
 
       // Update roam
       if (data.action === 'opened') {
@@ -46,8 +45,8 @@ module.exports = config => async app => {
           await roam.createBlock(issue.toRoamBlock(), issuePageId, 0);
         }
       }
-    }
 
-    githubIssueToDiscord(discord, issue, data.action);
+      githubIssueToDiscord(channel, issue, data.action);
+    }
   }
 };

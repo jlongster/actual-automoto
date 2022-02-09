@@ -3,7 +3,7 @@ const writeDiscordEmbed = require('automoto/actions/write-discord-embed');
 const redditPosts = require('automoto/sources/reddit-posts');
 const RedditPost = require('automoto/entities/RedditPost');
 
-module.exports = config => async app => {
+module.exports = config => async () => {
   let discord = await getDiscordClient(config.discord);
   let channel = await discord.channels.fetch('939022701811601519');
 

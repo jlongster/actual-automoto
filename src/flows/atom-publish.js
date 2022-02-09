@@ -3,7 +3,7 @@ const writeDiscordEmbed = require('automoto/actions/write-discord-embed');
 const atomFeed = require('automoto/sources/atom-feed');
 const AtomFeedEntry = require('automoto/entities/atom-feed-entry');
 
-module.exports = config => async app => {
+module.exports = config => async () => {
   let discord = await getDiscordClient(config.discord);
   let channel = await discord.channels.fetch(config.channel);
 

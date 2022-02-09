@@ -3,7 +3,7 @@ const getRoamClient = require('automoto/clients/roam');
 const discordReaction = require('automoto/sources/discord-reaction');
 const discordReactToRoam = require('automoto/actions/discord-react-to-roam');
 
-module.exports = config => async app => {
+module.exports = config => async () => {
   let discord = await getDiscordClient(config.discord);
   let roam = await getRoamClient(config.roamAuth);
 

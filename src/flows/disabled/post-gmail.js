@@ -41,6 +41,7 @@ function maskEmails(str) {
     if (m) {
       return (
         Array.from({ length: m[1].length })
+          // eslint-disable-next-line no-unused-vars
           .map(_ => 'X')
           .join('') +
         ' <' +
@@ -54,7 +55,6 @@ function maskEmails(str) {
 
 module.exports = config => async app => {
   let discord = await getDiscordClient(config.discord);
-  let embedMessage = await discordEmbed(config.discord, config.channelId);
   let channel = await discord.channels.fetch(config.channelId);
 
   for await (let { email, threadId } of await gmailNewEmail(
@@ -87,7 +87,8 @@ module.exports = config => async app => {
       // The email is from our account, mark any emails as followed up
       if (email.references && email.references.length > 0) {
         let messages = await channel.messages.fetch({ limit: 100 });
-        for (let [id, msg] of messages) {
+        // eslint-disable-next-line no-unused-vars
+        for (let [_, msg] of messages) {
           if (msg.embeds && msg.embeds.length > 0) {
             let embed = msg.embeds[0];
             let messageId = embed.fields.find(f => f.name === 'messageId');
