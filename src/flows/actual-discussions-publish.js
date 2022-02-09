@@ -11,7 +11,12 @@ module.exports = config => async app => {
   console.log('Listening to github webhook for Actual (discussions)...');
 
   for await (let data of await githubWebhook(app, config.github)) {
+    console.log('Github webhook fired (discussions)', data.action);
     if (data.action === 'created' && data.discussion) {
+      console.log(
+        'actual-discussions-publish is handling github webhook event'
+      );
+
       let discussion = new GithubDiscussion(data.discussion);
       let entity;
       if (data.comment == null) {

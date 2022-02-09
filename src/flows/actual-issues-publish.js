@@ -26,7 +26,10 @@ module.exports = config => async app => {
   console.log('Listening to github webhook for Actual (issues)...');
 
   for await (let data of await githubWebhook(app, config.github)) {
+    console.log('Github webhook fired (discussions)', data.action);
+
     if (data.issue) {
+      console.log('actual-issues-publish is handling github webhook event');
       let issue = new GithubIssue(data.issue);
 
       // Update roam

@@ -8,6 +8,7 @@ module.exports = config => async () => {
   let channel = await discord.channels.fetch(config.channel);
 
   for await (let post of await atomFeed(config.url)) {
+    console.log(`Handling new atom feed item (${config.url})`);
     await writeDiscordEmbed(channel, new AtomFeedEntry(post).toDiscordEmbed());
   }
 };

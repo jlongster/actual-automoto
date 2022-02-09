@@ -10,6 +10,7 @@ module.exports = config => async () => {
   console.log('Listening to discord reactions');
 
   for await (let reaction of await discordReaction(config.discord)) {
+    console.log('Handling discord reaction');
     discordReactToRoam(discord, roam, reaction);
   }
 };

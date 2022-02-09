@@ -1594,10 +1594,10 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-automoto@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/automoto/-/automoto-1.0.1.tgz#2d31294b858e48ae421d210651b3ac8a3c6f4b64"
-  integrity sha512-h/j9x1CAIQtBmOg0SCT6y4ECl7beLQWse8STeNYlaWuFQfer1ptNfku2V4sOoI34MFKZo4OPuT3FHvRVShYBCQ==
+automoto@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/automoto/-/automoto-1.0.2.tgz#4e3a34696a5fe6b571bd3cf5a6b2245c49426342"
+  integrity sha512-MOPkovFodv/ls84pLzTZq+1GQtkZ6S1Q/97CSmfosxv0DNIfD0cY/Qzrq/QcgF7z2dRaAUEW7NtbgyzXGCAd7w==
   dependencies:
     "@discordjs/rest" "^0.1.0-canary.0"
     "@emotion/weak-memoize" "^0.2.5"
@@ -1606,7 +1606,8 @@ automoto@^1.0.1:
     cors "^2.8.5"
     date-fns "^2.25.0"
     discord-api-types "^0.24.0"
-    discord.js "^13.2.0"
+    discord.js "^13.6.0"
+    eslint "^8.8.0"
     express "^4.17.1"
     fast-xml-parser "^4.0.2"
     googleapis "39"
@@ -2141,7 +2142,7 @@ discord-api-types@^0.26.0:
   resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.26.1.tgz#726f766ddc37d60da95740991d22cb6ef2ed787b"
   integrity sha512-T5PdMQ+Y1MEECYMV5wmyi9VEYPagEDEi4S0amgsszpWY0VB9JJ/hEvM6BgLhbdnKky4gfmZEXtEEtojN8ZKJQQ==
 
-discord.js@^13.2.0:
+discord.js@^13.6.0:
   version "13.6.0"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-13.6.0.tgz#d8a8a591dbf25cbcf9c783d5ddf22c4694860475"
   integrity sha512-tXNR8zgsEPxPBvGk3AQjJ9ljIIC6/LOPjzKwpwz8Y1Q2X66Vi3ZqFgRHYwnHKC0jC0F+l4LzxlhmOJsBZDNg9g==

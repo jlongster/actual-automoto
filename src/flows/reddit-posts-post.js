@@ -8,6 +8,7 @@ module.exports = config => async () => {
   let channel = await discord.channels.fetch('939022701811601519');
 
   for await (let post of await redditPosts('actualbudget')) {
+    console.log('Handling new reddit post');
     await writeDiscordEmbed(channel, new RedditPost(post).toDiscordEmbed());
   }
 };
