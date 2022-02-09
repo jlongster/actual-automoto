@@ -49,7 +49,7 @@ module.exports = config => async app => {
         }
       }
 
-      githubIssueToDiscord(channel, issue, data.action);
+      await githubIssueToDiscord(channel, data);
     }
   }
 };
