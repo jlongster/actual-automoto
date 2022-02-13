@@ -14,4 +14,4 @@ ENV DATA_DIR=/data
 ADD . .
 RUN yarn install
 
-CMD ["yarn", "start"]
+CMD ["yarn", "serve"]

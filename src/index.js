@@ -39,6 +39,12 @@ let actualRoamAuth = {
   password: process.env.ACTUAL_ROAM_API_PASSWORD
 };
 
+let githubBotAuth = {
+  appId: 171985,
+  privateKey: process.env.ACTUAL_BOT_PRIVATE_KEY,
+  installationId: 23217937
+};
+
 const flows = {
   'Discord Actual reactions': require('./flows/discord-reaction-roam')({
     discord: config.discordActual,
@@ -65,6 +71,18 @@ const flows = {
   'Actual discussions->discord': require('./flows/actual-discussions-publish')({
     github: config['github-actual'],
     discord: config.discordActual
+  }),
+  'Actual bot': require('./flows/issue-responses')({
+    github: config['github-actual'],
+    botAuth: githubBotAuth
+  }),
+  'Fixed issue': require('./flows/fixed-issue')({
+    githubCode: config['github-code'],
+    botAuth: githubBotAuth
+  }),
+  Release: require('./flows/release')({
+    headerToken: config.release.headerToken,
+    botAuth: githubBotAuth
   }),
   'Roam export (actual)': require('./flows/roam-export')({
     roamAuth: actualRoamAuth,

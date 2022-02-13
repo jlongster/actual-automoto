@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": ". ./.roamenv && node src/index.js",
+    "start": ". ./.roamenv && ACTUAL_BOT_PRIVATE_KEY=`cat src/actual-bot.private.pem` node src/index.js",
+    "serve": ". ./.roamenv && node src/index.js",
     "deploy": "flyctl deploy",
     "lint": "eslint src"
   },
