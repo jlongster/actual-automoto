@@ -1678,10 +1678,10 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-automoto@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/automoto/-/automoto-1.0.3.tgz#1b541ab49aeff6d55445cfa39fae9d677e3f452a"
-  integrity sha512-PoaxAeZDZFwyO348hMpJDItKMu+hP4a3jVjMEXtn8DN7CfPs2uTXT6Z0pIWu0FvcNAnmTJQeM79b03rpkJ9i2w==
+automoto@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/automoto/-/automoto-1.0.5.tgz#318803763f93cd3e4a2c1fea6cf64ab1ba870107"
+  integrity sha512-DjFKqjHYN167U82cLurQUiicpaY+il67QDhcC/MtO6NFyenR6E0AyShM/pc28HbwMPsM9attf2E8jrNgkUjM6w==
   dependencies:
     "@discordjs/rest" "^0.1.0-canary.0"
     "@emotion/weak-memoize" "^0.2.5"
